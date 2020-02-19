@@ -11,24 +11,59 @@ class Hero extends Component{
             <React.Fragment>
               <h1>Heros Components.. {this.isHero()}</h1>
               {/* <h3>Hero ID is {this.state.heroId}</h3> */}
-              <button className="alert alert-primary"> Click me</button>
-              <div className="card" style={{width: '50rem'}}>
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                 <li class="breadcrumb-item active" aria-current="page">Home</li>
+               </ol>
+              </nav>
+              {/* <button className="alert alert-primary"> Click me</button> */}
+              <button type="button" class="btn btn-danger">Danger</button>
+              <button type="button" class="btn btn-warning">Warning</button>
+              <button type="button" class="btn btn-outline-danger">Danger</button>
+              <button type="button" class="btn btn-outline-warning">Warning</button>
+              {/* button group */}
+              <div class="btn-group" role="group" aria-label="Basic example">
+              <button type="button" class="btn btn-secondary">Left</button>
+              <button type="button" class="btn btn-secondary">Middle</button>
+              <button type="button" class="btn btn-secondary">Right</button>
+              </div>
+              <div className="card" style={{width: '45rem'}}>
               <img 
                className="card-img-top" 
                src="https://images.alphacoders.com/691/thumb-350-691064.jpg" 
                alt="cartoon"
               />
+              <span class="badge badge-warning">Warning</span>
+              <span class="badge badge-danger">Danger</span>
+              
               <div className="card-body">
-              <h5 className="card-title">Super Girl</h5>
+              <h5 className="card-title" className="alert alert-danger" >Super Girl</h5>
               <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               <ul>
                   <li>Flying</li>
                   <li>Super power 2</li>
                   <li>Super power 3</li>
-              </ul>
+              </ul>        
+              <div class="card text-white bg-danger mb-3" style={{width: '18rem;'}}>
+              <div class="card-header">Header</div>
+              <div class="card-body">
+              <h5 class="card-title">Danger card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+              </div>
+              <div class="card text-white bg-warning mb-3" style={{width: '18rem;'}}>
+              <div class="card-header">Header</div>
+            <div class="card-body">
+            <h5 class="card-title">Warning card title</h5>
+             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>         
+          </div>
               <a href="#" className="btn btn-primary">Go somewhere</a>
            </div>
+           
         </div>
+        {/* Form */}
+        
             </React.Fragment>
         );
     };
