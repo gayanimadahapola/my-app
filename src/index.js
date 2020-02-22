@@ -4,6 +4,8 @@ import ReactDOM from "react-dom";
 //import Boostrap
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import Hero from "./Components/Hero";
+//import Hero from "./Components/Hero";
 
-ReactDOM.render(<Hero />,document.getElementById("root"));
+import Heroes from "./Components/Heroes";
+
+ReactDOM.render(<Heroes />,document.getElementById("root"));
