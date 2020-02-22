@@ -15,7 +15,7 @@ class Heroes extends Component{
             <div className= "row">
                     {this.state.allHeroes.map(h => (
                     <div key={h.id} className= "col">
-                        <Hero 
+                        <Hero hero={h}
                         />
                 </div>))}
             </div>
