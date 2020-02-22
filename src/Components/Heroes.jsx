@@ -1,14 +1,12 @@
 import React, { Component } from "react";
 
 import Hero from './Hero';
+import axios from "axios";
 
 class Heroes extends Component{
     state = {
-        allHeroes: [
-            { id: 1, likeCount:2 },
-            { id: 2, likeCount:4 },
-            { id: 3, likeCount:9 },
-        ]         
+        allHeroes: []
+        
     };
 
     render (){
@@ -17,12 +15,30 @@ class Heroes extends Component{
             <div className= "row">
                     {this.state.allHeroes.map(h => (
                     <div key={h.id} className= "col">
-                        <Hero />
+                        <Hero 
+                        />
                 </div>))}
             </div>
         </div>
         );
     };
-}
+
+//React lifecycle
+async componentDidMount(){
+
+   const { data } = await axios.get("http://localhost:5500/api/heroes");
+   console.log(data); 
+   let heroes = data.map(hero => {
+
+    return{
+        id: hero._id,
+        name: hero.name,
+        imgUrl: hero.imgUrl,
+        likeCount: hero.likeCount,
+        movies: hero.movies
+    };
+   });
+   this.setState({ allHeroes: heroes });
+}}
 
 export default Heroes;
